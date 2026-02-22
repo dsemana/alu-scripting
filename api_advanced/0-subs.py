@@ -18,7 +18,6 @@ def number_of_subscribers(subreddit):
             url,
             headers=headers,
             allow_redirects=False,
-            timeout=10,
         )
     except requests.RequestException:
         return 0
