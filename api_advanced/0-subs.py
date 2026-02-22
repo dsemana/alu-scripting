@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-"""Query the Reddit API and return subscriber count for a subreddit."""
+"""0-subs module.
+
+This module defines a function that queries Reddit's public API and
+returns the total number of subscribers for a subreddit.
+"""
 
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """Return total subscribers for `subreddit`, or 0 if invalid."""
+    """Return the subscriber count for a subreddit or 0 if invalid."""
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     headers = {"User-Agent": "alu-reddit-api/1.0"}
 
