@@ -3,6 +3,13 @@
 0-subs
 Module that queries the Reddit API and returns the total number
 of subscribers for a given subreddit.
+
+Usage:
+    >>> number_of_subscribers('python')
+    1040000  # Example output for existing subreddit
+
+    >>> number_of_subscribers('this_sub_does_not_exist')
+    0  # Example output for nonexisting subreddit
 """
 
 import requests
@@ -20,7 +27,6 @@ def number_of_subscribers(subreddit):
     """
     url = f'https://www.reddit.com/r/{subreddit}/about.json'
     headers = {'User-Agent': 'python:0-subs:v1.0 (by /u/username)'}
-    
     try:
         response = requests.get(url, headers=headers, allow_redirects=False)
         if response.status_code != 200:
